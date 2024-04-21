@@ -6,6 +6,7 @@ from DiagonalDifference import diagonalDifference
 from CountingSort import countingSort
 from TowerBreakers import towerBreakers
 from CaesarCipher import caesarCipher
+from GridChallenge import gridChallenge
 
 # Generic Small Test Array, All values unique, containes pos and neg
 smallTestArray = [-987, 123, 7, 17, 26, -1, -759, 0]
@@ -28,6 +29,9 @@ oneFourDoubleArray=[1, 4]
 
 # AlphaSymbolString
 alphaSymbolTestString = "Peppermint-Question"
+
+#alphabetgrid len(grid)=5, height(grid)=5
+alphabetGrid = ['ebacd', 'fghij', 'olmkn', 'trpqs', 'xywuv']
 
 
 if __name__ == "__main__":
@@ -63,4 +67,8 @@ if __name__ == "__main__":
 
     caesarCipherResult = caesarCipher(alphaSymbolTestString, 7)
     print("Testing CaesarCipher.py: ",caesarCipherResult)
+    print()
+
+    gridChallengeResult = gridChallenge(alphabetGrid)
+    print("Testing GridChallenge.py: ",gridChallengeResult)
     print()
