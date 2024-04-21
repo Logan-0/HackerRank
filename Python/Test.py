@@ -5,6 +5,7 @@ from LonelyInteger import lonelyInteger
 from DiagonalDifference import diagonalDifference
 from CountingSort import countingSort
 from TowerBreakers import towerBreakers
+from CaesarCipher import caesarCipher
 
 # Generic Small Test Array, All values unique, containes pos and neg
 smallTestArray = [-987, 123, 7, 17, 26, -1, -759, 0]
@@ -24,6 +25,9 @@ smallSquareMatrix = [[11, 2, 4], [4, 5, 6], [10,8,-12]]
 # 2 Length Array
 twoTwoDoubleArray=[2, 2]
 oneFourDoubleArray=[1, 4]
+
+# AlphaSymbolString
+alphaSymbolTestString = "Peppermint-Question"
 
 
 if __name__ == "__main__":
@@ -55,4 +59,8 @@ if __name__ == "__main__":
     towerBreakersResult1 = towerBreakers(twoTwoDoubleArray[0], twoTwoDoubleArray[1])
     towerBreakersResult2 = towerBreakers(oneFourDoubleArray[0], oneFourDoubleArray[1])
     print("Testing TowerBreakers.py: \n Result1: ",towerBreakersResult1," Result2: ",towerBreakersResult2)
+    print()
+
+    caesarCipherResult = caesarCipher(alphaSymbolTestString, 7)
+    print("Testing CaesarCipher.py: ",caesarCipherResult)
     print()
