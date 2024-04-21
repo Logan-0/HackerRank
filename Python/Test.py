@@ -7,6 +7,7 @@ from CountingSort import countingSort
 from TowerBreakers import towerBreakers
 from CaesarCipher import caesarCipher
 from GridChallenge import gridChallenge
+from RecursiveDigitSum import superDigit
 
 # Generic Small Test Array, All values unique, containes pos and neg
 smallTestArray = [-987, 123, 7, 17, 26, -1, -759, 0]
@@ -71,4 +72,8 @@ if __name__ == "__main__":
 
     gridChallengeResult = gridChallenge(alphabetGrid)
     print("Testing GridChallenge.py: ",gridChallengeResult)
+    print()
+
+    superDigitResult = superDigit('9875', 4)
+    print("Testing RecursiveDigitSum.py: ",superDigitResult)
     print()
