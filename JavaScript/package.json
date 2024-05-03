@@ -1,0 +1,16 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "Testing for hackerRank",
+  "main": "Test.js",
+  "type": "module",
+  "scripts": {
+    "test": "node Test.js"
+  },
+  "keywords": [
+    "JavaScript",
+    "HackerRank"
+  ],
+  "author": "Logan Carpenter",
+  "license": "ISC"
+}
