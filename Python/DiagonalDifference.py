@@ -1,3 +1,5 @@
+# Given a square matrix, calculate the absolute difference between the sums of its diagonals.
+
 def diagonalDifference(arr):
     # Init Vars
     diagOne = 0

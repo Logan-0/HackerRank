@@ -45,43 +45,55 @@ if __name__ == "__main__":
     print("Testing PlusMinus.py: \n",plusMinusResult)
     print()
 
+
     miniMaxSumResult = miniMaxSum(smallTestArray)
     print("Testing MiniMaxSum.py: \n",miniMaxSumResult)
     print()
+
 
     timeConversionResult = timeConversion(timeString)
     print("Testing TimeConversion.py: \n",timeConversionResult)
     print()
 
+
     lonelyIntegerResult = lonelyInteger(smallDuplicateValueArray)
     print("Testing LonelyInteger.py: ",lonelyIntegerResult)
     print()
+
 
     diagonalDifferenceResult = diagonalDifference(smallSquareMatrix)
     print("Testing DiagonalDifference.py: ",diagonalDifferenceResult)
     print()
 
+
     countingSortResult = countingSort(largeTestArray)
     print("Testing CountingSort.py: \n",countingSortResult)
     print()
+
 
     towerBreakersResult1 = towerBreakers(twoTwoDoubleArray[0], twoTwoDoubleArray[1])
     towerBreakersResult2 = towerBreakers(oneFourDoubleArray[0], oneFourDoubleArray[1])
     print("Testing TowerBreakers.py: \n Result1: ",towerBreakersResult1," Result2: ",towerBreakersResult2)
     print()
 
+
     caesarCipherResult = caesarCipher(alphaSymbolTestString, 7)
     print("Testing CaesarCipher.py: ",caesarCipherResult)
     print()
+
 
     gridChallengeResult = gridChallenge(alphabetGrid)
     print("Testing GridChallenge.py: ",gridChallengeResult)
     print()
 
+
     superDigitResult = superDigit('9875', 4)
     print("Testing RecursiveDigitSum.py: ",superDigitResult)
     print()
 
+
     minimumBribesResult = minimumBribes(smallSeqArray)
     print("Testing NewYearChaos.py: ", minimumBribesResult)
     print()
+
+    

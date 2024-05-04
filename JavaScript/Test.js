@@ -1,6 +1,12 @@
 import { miniMaxSum } from "./MiniMaxSum.js"
-import {plusMinus} from "./PlusMinus.js"
-import {timeConversion} from "./TimeConversion.js"
+import { plusMinus } from "./PlusMinus.js"
+import { timeConversion } from "./TimeConversion.js"
+import { lonelyInteger } from "./LonelyInteger.js"
+import { diagonalDifference } from "./DiagonalDifference.js"
+import { countingSort } from "./CountingSort.js"
+import { towerBreakers } from "./TowerBreakers.js"
+import { caesarCipher } from "./CaesarCipher.js"
+import { gridChallenge } from "./GridChallenge.js"
 
 function testingFunction() {
 
@@ -40,7 +46,36 @@ function testingFunction() {
 
 
     const timeConversionResult = timeConversion(timeString)
-    console.log("Testing TimeConversion.js: \n",timeConversionResult)
+    console.log("Testing TimeConversion.js: \n", timeConversionResult)
+    console.log()
+
+
+    const lonelyIntegerResult = lonelyInteger(smallDuplicateValueArray)
+    console.log("Testing LonelyInteger.js: \n", lonelyIntegerResult)
+    console.log()
+
+
+    const diagonalDifferenceResult = diagonalDifference(smallSquareMatrix)
+    console.log("Testing DiagonalDifference.js: \n", diagonalDifferenceResult)
+    console.log()
+
+
+    const countingSortResult = countingSort(largeTestArray)
+    console.log("Testing CountingSort.js: \n", countingSortResult)
+    console.log()
+
+    const towerBreakersResult1 = towerBreakers(twoTwoDoubleArray[0], twoTwoDoubleArray[1])
+    const towerBreakersResult2 = towerBreakers(oneFourDoubleArray[0], oneFourDoubleArray[1])
+    console.log("Testing TowerBreakers.js: \n Result1: ", towerBreakersResult1, " Result2: ", towerBreakersResult2)
+    console.log()
+
+    const caesarCipherResult = caesarCipher(alphaSymbolTestString, 7)
+    console.log("Testing CaesarCipher.js: \n", caesarCipherResult)
+    console.log()
+
+
+    const gridChallengeResult = gridChallenge(alphabetGrid)
+    console.log("Testing GridChallenge.js: \n", gridChallengeResult)
     console.log()
 }
 
