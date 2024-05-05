@@ -9,6 +9,7 @@ import { caesarCipher } from "./CaesarCipher.js"
 import { gridChallenge } from "./GridChallenge.js"
 import { superDigit } from "./RecursiveDigitSum.js"
 import { minimumBribes } from "./NewYearsChaos.js"
+import { mergeLists } from "./MergeTwoSortedLinkedLists.js"
 
 function testingFunction() {
 
@@ -39,6 +40,58 @@ function testingFunction() {
 
     // # Alphabetgrid len(grid)=5, height(grid)=5
     const alphabetGrid = ['ebacd', 'fghij', 'olmkn', 'trpqs', 'xywuv']
+
+
+    // SINGLE LINKED LIST SETUP
+    // SINGLE LINKED LIST SETUP
+    // SINGLE LINKED LIST SETUP
+    const SinglyLinkedListNode = class {
+        constructor(nodeData) {
+            this.data = nodeData;
+            this.next = null;
+        }
+    };
+
+    const SinglyLinkedList = class {
+        constructor() {
+            this.head = null;
+            this.tail = null;
+        }
+
+        insertNode(nodeData) {
+            const node = new SinglyLinkedListNode(nodeData);
+
+            if (this.head == null) {
+                this.head = node;
+            } else {
+                this.tail.next = node;
+            }
+
+            this.tail = node;
+        }
+    };
+
+    // Singly Linked List 1 & 2
+    var llist1 = new SinglyLinkedList();
+    const llist1Item1 = 1
+    const llist1Item2 = 2
+    const llist1Item3 = 3
+    llist1.insertNode(llist1Item1)
+    llist1.insertNode(llist1Item2)
+    llist1.insertNode(llist1Item3)
+
+    var llist2 = new SinglyLinkedList();
+    const llist2Item1 = 2
+    const llist2Item2 = 4
+    const llist2Item3 = 6
+    llist2.insertNode(llist2Item1)
+    llist2.insertNode(llist2Item2)
+    llist2.insertNode(llist2Item3)
+
+    // SINGLE LINKED LIST SETUP END
+    // SINGLE LINKED LIST SETUP END
+    // SINGLE LINKED LIST SETUP END
+
 
     const plusMinusResult = plusMinus(smallTestArray)
     console.log("Testing PlusMinus.js: \n", plusMinusResult)
@@ -91,6 +144,11 @@ function testingFunction() {
 
     const minimumBribesResult = minimumBribes(smallSeqArray)
     console.log("Testing NewYearChaos.js: ", minimumBribesResult)
+    console.log()
+
+
+    const mergeListsResults = mergeLists(llist1, llist2)
+    console.log("Testing MergeTwoSortedLinkedLists.js: ", mergeListsResults)
     console.log()
 
 

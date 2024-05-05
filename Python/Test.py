@@ -9,6 +9,7 @@ from TowerBreakers import towerBreakers
 from CaesarCipher import caesarCipher
 from GridChallenge import gridChallenge
 from RecursiveDigitSum import superDigit
+from MergeTwoSortedLinkedLists import mergeLists
 
 # Generic Small Test Array, All values unique, containes pos and neg
 smallTestArray = [-987, 123, 7, 17, 26, -1, -759, 0]
@@ -38,6 +39,60 @@ alphaSymbolTestString = "Peppermint-Question"
 #alphabetgrid len(grid)=5, height(grid)=5
 alphabetGrid = ['ebacd', 'fghij', 'olmkn', 'trpqs', 'xywuv']
 
+# // SINGLE LINKED LIST SETUP
+# // SINGLE LINKED LIST SETUP
+# // SINGLE LINKED LIST SETUP
+class SinglyLinkedListNode:
+    def __init__(self, node_data):
+        self.data = node_data
+        self.next = None
+
+class SinglyLinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+
+    def insert_node(self, node_data):
+        node = SinglyLinkedListNode(node_data)
+
+        if not self.head:
+            self.head = node
+        else:
+            self.tail.next = node
+
+
+        self.tail = node
+
+def print_singly_linked_list(node, sep):
+    while node:
+        print(str(node.data))
+
+        node = node.next
+
+        if node:
+            print(sep)
+
+# // Singly Linked List 1 & 2
+llist1 = SinglyLinkedList();
+llist1Item1 = int(1)
+llist1Item2 = int(2)
+llist1Item3 = int(3)
+llist1.insert_node(llist1Item1)
+llist1.insert_node(llist1Item2)
+llist1.insert_node(llist1Item3)
+
+llist2 = SinglyLinkedList();
+llist2Item1 = 2
+llist2Item2 = 4
+llist2Item3 = 6
+llist2.insert_node(llist2Item1)
+llist2.insert_node(llist2Item2)
+llist2.insert_node(llist2Item3)
+
+# // SINGLE LINKED LIST SETUP END
+# // SINGLE LINKED LIST SETUP END
+# // SINGLE LINKED LIST SETUP END
+
 
 if __name__ == "__main__":
     
@@ -57,12 +112,12 @@ if __name__ == "__main__":
 
 
     lonelyIntegerResult = lonelyInteger(smallDuplicateValueArray)
-    print("Testing LonelyInteger.py: ",lonelyIntegerResult)
+    print("Testing LonelyInteger.py: \n",lonelyIntegerResult)
     print()
 
 
     diagonalDifferenceResult = diagonalDifference(smallSquareMatrix)
-    print("Testing DiagonalDifference.py: ",diagonalDifferenceResult)
+    print("Testing DiagonalDifference.py: \n",diagonalDifferenceResult)
     print()
 
 
@@ -78,22 +133,29 @@ if __name__ == "__main__":
 
 
     caesarCipherResult = caesarCipher(alphaSymbolTestString, 7)
-    print("Testing CaesarCipher.py: ",caesarCipherResult)
+    print("Testing CaesarCipher.py: \n",caesarCipherResult)
     print()
 
 
     gridChallengeResult = gridChallenge(alphabetGrid)
-    print("Testing GridChallenge.py: ",gridChallengeResult)
+    print("Testing GridChallenge.py: \n",gridChallengeResult)
     print()
 
 
     superDigitResult = superDigit('9875', 4)
-    print("Testing RecursiveDigitSum.py: ",superDigitResult)
+    print("Testing RecursiveDigitSum.py: \n",superDigitResult)
     print()
 
 
     minimumBribesResult = minimumBribes(smallSeqArray)
-    print("Testing NewYearChaos.py: ", minimumBribesResult)
+    print("Testing NewYearChaos.py: \n", minimumBribesResult)
     print()
+
+
+    mergeListsResults = mergeLists(llist1.head, llist2.head)
+    print("Testing MergeTwoSortedLinkedLists.js:\n")
+    print(print_singly_linked_list(mergeListsResults, " "))
+
+
 
     
