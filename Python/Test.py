@@ -1,6 +1,7 @@
 from NewYearChaos import minimumBribes
 from PlusMinus import plusMinus
 from MiniMaxSum import miniMaxSum
+from QueueUsingTwoStacks import processData
 from TimeConversion import timeConversion
 from LonelyInteger import lonelyInteger
 from DiagonalDifference import diagonalDifference
@@ -10,6 +11,7 @@ from CaesarCipher import caesarCipher
 from GridChallenge import gridChallenge
 from RecursiveDigitSum import superDigit
 from MergeTwoSortedLinkedLists import mergeLists
+from BalancedBrackets import isBalanced
 
 # Generic Small Test Array, All values unique, containes pos and neg
 smallTestArray = [-987, 123, 7, 17, 26, -1, -759, 0]
@@ -93,6 +95,23 @@ llist2.insert_node(llist2Item3)
 # // SINGLE LINKED LIST SETUP END
 # // SINGLE LINKED LIST SETUP END
 
+br1 = "{[()]}"
+br2 = "{[(])}"
+br3 = "{{[[(())]]}}"
+
+# // 10      q = 10 (number of queries)
+# // 1 42    1st query, enqueue 42
+# // 2       dequeue front element
+# // 1 14    enqueue 42
+# // 3       print the front element
+# // 1 28    enqueue 28
+# // 3       print the front element
+# // 1 60    enqueue 60
+# // 1 78    enqueue 78
+# // 2       dequeue front element
+# // 2       dequeue front element
+queueStack = ["10", "1 42", "2", "1 14", "3", "1 28", "3", "1 60", "1 78", "2", "2"]
+
 
 if __name__ == "__main__":
     
@@ -153,9 +172,21 @@ if __name__ == "__main__":
 
 
     mergeListsResults = mergeLists(llist1.head, llist2.head)
-    print("Testing MergeTwoSortedLinkedLists.js:\n")
+    print("Testing MergeTwoSortedLinkedLists.py:\n")
     print(print_singly_linked_list(mergeListsResults, " "))
+    print()
 
 
-
+    isBalancedResult1 = isBalanced(br1)
+    isBalancedResult2 = isBalanced(br2)
+    isBalancedResult3 = isBalanced(br3)
+    print("Testing BalancedBrackets.py:")
+    print("Bracket Pattern 1: ", isBalancedResult1)
+    print("Bracket Pattern 2: ", isBalancedResult2)
+    print("Bracket Pattern 3: ", isBalancedResult3)
+    print()
     
+
+    print("Testing QueueUsingTwoStacks.py:")
+    print(processData(queueStack))
+    print()

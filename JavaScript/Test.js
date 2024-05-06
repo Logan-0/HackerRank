@@ -10,6 +10,8 @@ import { gridChallenge } from "./GridChallenge.js"
 import { superDigit } from "./RecursiveDigitSum.js"
 import { minimumBribes } from "./NewYearsChaos.js"
 import { mergeLists } from "./MergeTwoSortedLinkedLists.js"
+import { isBalanced } from "./BalancedBrackets.js"
+import { processData } from "./QueueUsingTwoStack.js"
 
 function testingFunction() {
 
@@ -92,6 +94,23 @@ function testingFunction() {
     // SINGLE LINKED LIST SETUP END
     // SINGLE LINKED LIST SETUP END
 
+    const br1 = "{[()]}"
+    const br2 = "{[(])}"
+    const br3 = "{{[[(())]]}}"
+
+    // 10      q = 10 (number of queries)
+    // 1 42    1st query, enqueue 42
+    // 2       dequeue front element
+    // 1 14    enqueue 42
+    // 3       print the front element
+    // 1 28    enqueue 28
+    // 3       print the front element
+    // 1 60    enqueue 60
+    // 1 78    enqueue 78
+    // 2       dequeue front element
+    // 2       dequeue front element
+    const queueStack = ["10", "1 42", "2", "1 14", "3", "1 28", "3", "1 60", "1 78", "2", "2"]
+
 
     const plusMinusResult = plusMinus(smallTestArray)
     console.log("Testing PlusMinus.js: \n", plusMinusResult)
@@ -152,7 +171,19 @@ function testingFunction() {
     console.log()
 
 
+    const isBalancedResult1 = isBalanced(br1)
+    const isBalancedResult2 = isBalanced(br2)
+    const isBalancedResult3 = isBalanced(br3)
+    console.log("Testing BalancedBrackets.js: \n")
+    console.log("Bracket Pattern 1: ", isBalancedResult1)
+    console.log("Bracket Pattern 2: ", isBalancedResult2)
+    console.log("Bracket Pattern 3: ", isBalancedResult3)
+    console.log()
 
+
+    console.log("Testing QueueUsingTwoStacks.js:")
+    processData(queueStack)
+    console.log()
 }
 
 testingFunction()

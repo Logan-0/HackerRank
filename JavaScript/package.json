@@ -1,16 +1,25 @@
 {
-  "name": "javascript",
+  "name": "hackerrank-js",
   "version": "1.0.0",
-  "description": "Testing for hackerRank",
-  "main": "Test.js",
+  "description": "HackerRank Pkg for ES6 Use",
+  "main": "test.js",
+  "devDependencies": {},
   "type": "module",
   "scripts": {
-    "test": "node Test.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/logan-0/HackerRank.git"
   },
   "keywords": [
-    "JavaScript",
-    "HackerRank"
+    "HackerRank",
+    "Javascript"
   ],
   "author": "Logan Carpenter",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/logan-0/HackerRank/issues"
+  },
+  "homepage": "https://github.com/logan-0/HackerRank#readme"
 }
