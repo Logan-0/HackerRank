@@ -13,6 +13,7 @@ import { mergeLists } from "./MergeTwoSortedLinkedLists.js"
 import { isBalanced } from "./BalancedBrackets.js"
 import { processData } from "./QueueUsingTwoStack.js"
 import { simpleTextEditor } from "./SimpleTextEditor.js"
+import { legoBlocks } from "./LegoBlocks.js"
 
 function testingFunction() {
 
@@ -211,6 +212,11 @@ function testingFunction() {
 
     console.log("Testing SimpleTextEditor.js:")
     simpleTextEditor(stringStack)
+    console.log()
+
+
+    console.log("Testing LegoBlocks.js:")
+    legoBlocks(4, 4)
     console.log()
 }
 

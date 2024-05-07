@@ -13,6 +13,7 @@ from RecursiveDigitSum import superDigit
 from MergeTwoSortedLinkedLists import mergeLists
 from BalancedBrackets import isBalanced
 from SimpleTextEditor import simpleTextEditor
+from LegoBlocks import legoBlocks
 
 # Generic Small Test Array, All values unique, containes pos and neg
 smallTestArray = [-987, 123, 7, 17, 26, -1, -759, 0]
@@ -215,4 +216,9 @@ if __name__ == "__main__":
 
     print("Testing SimpleTextEditor.py:")
     simpleTextEditor(stringStack)
+    print()
+
+
+    print("Testing LegoBlocks.py:")
+    legoBlocks(4, 4)
     print()
