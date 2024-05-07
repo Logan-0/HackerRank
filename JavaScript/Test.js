@@ -97,6 +97,38 @@ function testingFunction() {
     // SINGLE LINKED LIST SETUP END
     // SINGLE LINKED LIST SETUP END
 
+    // TREE NODES
+    // TREE NODES
+    // TREE NODES
+
+    var Tree = function () {
+        this.root = null;
+    }
+
+    Tree.prototype.insert = function (node, data) {
+        if (node == null) {
+            node = new Node(data);
+        }
+        else if (data < node.data) {
+            node.left = this.insert(node.left, data);
+        }
+        else {
+            node.right = this.insert(node.right, data);
+        }
+
+        return node;
+    }
+
+    var Node = function (data) {
+        this.data = data;
+        this.left = null;
+        this.right = null;
+    }
+
+    // TREE NODES
+    // TREE NODES
+    // TREE NODES
+
     const br1 = "{[()]}"
     const br2 = "{[(])}"
     const br3 = "{{[[(())]]}}"
