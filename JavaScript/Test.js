@@ -12,6 +12,7 @@ import { minimumBribes } from "./NewYearsChaos.js"
 import { mergeLists } from "./MergeTwoSortedLinkedLists.js"
 import { isBalanced } from "./BalancedBrackets.js"
 import { processData } from "./QueueUsingTwoStack.js"
+import { simpleTextEditor } from "./SimpleTextEditor.js"
 
 function testingFunction() {
 
@@ -112,6 +113,28 @@ function testingFunction() {
     const queueStack = ["10", "1 42", "2", "1 14", "3", "1 28", "3", "1 60", "1 78", "2", "2"]
 
 
+    // operation
+    // index   S       ops[index]  explanation
+    // -----   ------  ----------  -----------
+    // 0       abcde   1 fg        append fg
+    // 1       abcdefg 3 6         print the 6th letter - f
+    // 2       abcdefg 2 5         delete the last 5 letters
+    // 3       ab      4           undo the last operation, index 2
+    // 4       abcdefg 3 7         print the 7th characgter - g
+    // 5       abcdefg 4           undo the last operation, index 0
+    // 6       abcde   3 4         print the 4th character - d
+    const stringStack = 
+        `8
+        1 abc
+        3 3
+        2 3
+        1 xy
+        3 2
+        4
+        4
+        3 1`
+
+
     const plusMinusResult = plusMinus(smallTestArray)
     console.log("Testing PlusMinus.js: \n", plusMinusResult)
     console.log()
@@ -183,6 +206,11 @@ function testingFunction() {
 
     console.log("Testing QueueUsingTwoStacks.js:")
     processData(queueStack)
+    console.log()
+
+
+    console.log("Testing SimpleTextEditor.js:")
+    simpleTextEditor(stringStack)
     console.log()
 }
 

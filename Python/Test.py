@@ -12,6 +12,7 @@ from GridChallenge import gridChallenge
 from RecursiveDigitSum import superDigit
 from MergeTwoSortedLinkedLists import mergeLists
 from BalancedBrackets import isBalanced
+from SimpleTextEditor import simpleTextEditor
 
 # Generic Small Test Array, All values unique, containes pos and neg
 smallTestArray = [-987, 123, 7, 17, 26, -1, -759, 0]
@@ -112,6 +113,26 @@ br3 = "{{[[(())]]}}"
 # // 2       dequeue front element
 queueStack = ["10", "1 42", "2", "1 14", "3", "1 28", "3", "1 60", "1 78", "2", "2"]
 
+    # // operation
+    # // index   S       ops[index]  explanation
+    # // -----   ------  ----------  -----------
+    # // 0       abcde   1 fg        append fg
+    # // 1       abcdefg 3 6         print the 6th letter - f
+    # // 2       abcdefg 2 5         delete the last 5 letters
+    # // 3       ab      4           undo the last operation, index 2
+    # // 4       abcdefg 3 7         print the 7th characgter - g
+    # // 5       abcdefg 4           undo the last operation, index 0
+    # // 6       abcde   3 4         print the 4th character - d
+stringStack = ("8\n"+
+                "1 abc\n" +
+                "3 3\n" +
+                "2 3\n" +
+                "1 xy\n" +
+                "3 2\n" +
+                "4\n" +
+                "4\n" +
+                "3 1")
+
 
 if __name__ == "__main__":
     
@@ -188,5 +209,10 @@ if __name__ == "__main__":
     
 
     print("Testing QueueUsingTwoStacks.py:")
-    print(processData(queueStack))
+    processData(queueStack)
+    print()
+
+
+    print("Testing SimpleTextEditor.py:")
+    simpleTextEditor(stringStack)
     print()
