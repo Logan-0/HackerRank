@@ -14,6 +14,7 @@ from MergeTwoSortedLinkedLists import mergeLists
 from BalancedBrackets import isBalanced
 from SimpleTextEditor import simpleTextEditor
 from LegoBlocks import legoBlocks
+from JesseAndCookies import cookies
 
 # Generic Small Test Array, All values unique, containes pos and neg
 smallTestArray = [-987, 123, 7, 17, 26, -1, -759, 0]
@@ -134,6 +135,9 @@ stringStack = ("8\n"+
                 "4\n" +
                 "3 1")
 
+A = [1, 2, 3, 9, 10, 12]
+k=7
+
 
 if __name__ == "__main__":
     
@@ -222,3 +226,11 @@ if __name__ == "__main__":
     print("Testing LegoBlocks.py:")
     legoBlocks(4, 4)
     print()
+
+
+    print("Testing JesseAndCookies.py:")
+    print(cookies(k, A))
+    print()
+
+
+    

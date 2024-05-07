@@ -14,6 +14,7 @@ import { isBalanced } from "./BalancedBrackets.js"
 import { processData } from "./QueueUsingTwoStack.js"
 import { simpleTextEditor } from "./SimpleTextEditor.js"
 import { legoBlocks } from "./LegoBlocks.js"
+import { cookies } from "./JesseAndCookies.js"
 
 function testingFunction() {
 
@@ -124,7 +125,7 @@ function testingFunction() {
     // 4       abcdefg 3 7         print the 7th characgter - g
     // 5       abcdefg 4           undo the last operation, index 0
     // 6       abcde   3 4         print the 4th character - d
-    const stringStack = 
+    const stringStack =
         `8
         1 abc
         3 3
@@ -135,6 +136,8 @@ function testingFunction() {
         4
         3 1`
 
+    const k = 7
+    const A = [1, 2, 3, 9, 10, 12]
 
     const plusMinusResult = plusMinus(smallTestArray)
     console.log("Testing PlusMinus.js: \n", plusMinusResult)
@@ -218,6 +221,14 @@ function testingFunction() {
     console.log("Testing LegoBlocks.js:")
     legoBlocks(4, 4)
     console.log()
+
+
+    console.log("Testing JesseAndCookies.js:")
+    console.log(cookies(k, A))
+    console.log()
+
+
+
 }
 
 testingFunction()
