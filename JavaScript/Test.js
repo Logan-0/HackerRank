@@ -15,6 +15,7 @@ import { processData } from "./QueueUsingTwoStack.js"
 import { simpleTextEditor } from "./SimpleTextEditor.js"
 import { legoBlocks } from "./LegoBlocks.js"
 import { cookies } from "./JesseAndCookies.js"
+import { preOrder } from "./PreOrderTraversal.js"
 
 function testingFunction() {
 
@@ -123,6 +124,13 @@ function testingFunction() {
         this.data = data;
         this.left = null;
         this.right = null;
+    }
+
+    var tree = new Tree();
+    var n = 6;
+    var m = [1, 2, 5, 3, 6, 4];
+    for (var i=0; i<n; i++) {
+        tree.root = tree.insert(tree.root, m[i]);
     }
 
     // TREE NODES
@@ -260,7 +268,12 @@ function testingFunction() {
     console.log()
 
 
+    console.log("Testing PreOrderTraversal.js:")
+    preOrder(tree.root)
+    console.log()
 
+
+    
 }
 
 testingFunction()

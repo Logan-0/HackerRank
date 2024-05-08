@@ -137,6 +137,13 @@ class BinarySearchTree:
                         break
                 else:
                     break
+tree = BinarySearchTree()
+t = int(input())
+
+arr = list(map(int, input().split()))
+
+for i in range(t):
+    tree.create(arr[i])
 # NODE CLASS
 # NODE CLASS
 # NODE CLASS
@@ -277,4 +284,6 @@ if __name__ == "__main__":
     print()
 
 
-    
+    print("Testing PreOrderTraversal.py:")
+    preOrder(tree.root)
+    print()
