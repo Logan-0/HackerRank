@@ -15,6 +15,8 @@ from BalancedBrackets import isBalanced
 from SimpleTextEditor import simpleTextEditor
 from LegoBlocks import legoBlocks
 from JesseAndCookies import cookies
+from PreOrderTraversal import preOrder
+from NoPrefixSet import noPrefix
 
 # Generic Small Test Array, All values unique, containes pos and neg
 smallTestArray = [-987, 123, 7, 17, 26, -1, -759, 0]
@@ -138,9 +140,9 @@ class BinarySearchTree:
                 else:
                     break
 tree = BinarySearchTree()
-t = int(input())
+t = 6
 
-arr = list(map(int, input().split()))
+arr = [1, 2, 5, 3, 6, 4]
 
 for i in range(t):
     tree.create(arr[i])
@@ -188,6 +190,15 @@ stringStack = ("8\n"+
 
 A = [1, 2, 3, 9, 10, 12]
 k=7
+
+noPrefixWords = (["7",
+"aab",
+"defgab",
+"abcde",
+"aabcde",
+"cedaaa",
+"bbbbbbbbbbn",
+"jabjjjad"])
 
 
 if __name__ == "__main__":
@@ -286,4 +297,9 @@ if __name__ == "__main__":
 
     print("Testing PreOrderTraversal.py:")
     preOrder(tree.root)
+    print()
+
+
+    print("Testing NoPrefixSet.py:")
+    noPrefix(noPrefixWords)
     print()

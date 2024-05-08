@@ -16,6 +16,7 @@ import { simpleTextEditor } from "./SimpleTextEditor.js"
 import { legoBlocks } from "./LegoBlocks.js"
 import { cookies } from "./JesseAndCookies.js"
 import { preOrder } from "./PreOrderTraversal.js"
+import { noPrefix } from "./NoPrefixSet.js"
 
 function testingFunction() {
 
@@ -179,6 +180,15 @@ function testingFunction() {
     const k = 7
     const A = [1, 2, 3, 9, 10, 12]
 
+    const noPrefixWords = (["7",
+    "aab",
+    "defgab",
+    "abcde",
+    "aabcde",
+    "cedaaa",
+    "bbbbbbbbbbn",
+    "jabjjjad"])
+
     const plusMinusResult = plusMinus(smallTestArray)
     console.log("Testing PlusMinus.js: \n", plusMinusResult)
     console.log()
@@ -273,7 +283,9 @@ function testingFunction() {
     console.log()
 
 
-    
+    console.log("Testing NoPrefixSet.js:")
+    noPrefix(noPrefixWords)
+    console.log()
 }
 
 testingFunction()

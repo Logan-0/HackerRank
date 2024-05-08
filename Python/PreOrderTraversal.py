@@ -5,7 +5,7 @@ def preOrder(root):
         return
 
     # // Deal with the node
-    print(root.data);
+    print(root);
 
     # // Recur on left subtree
     preOrder(root.left);
