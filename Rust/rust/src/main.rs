@@ -1,40 +1,51 @@
 use std::io;
-use rand::Rng;
-use std::cmp::Ordering;
 
 // try building programs to do the following:
 
-// Convert temperatures between Fahrenheit and Celsius.
 // Generate the nth Fibonacci number.
 // Print the lyrics to the Christmas carol “The Twelve Days of Christmas,” taking advantage of the repetition in the song.
 
 fn main() {
-
-    let secret_number = rand::thread_rng().gen_range(1..=100);
-
     loop {
+        let array = [0, 1];
 
-        println!("Please input your guess.");
-        let mut guess = String::new();
-
+        println!("Please input your length of Fib(n): ");
+        let mut fib: String = String::new();
         io::stdin()
-        .read_line(&mut guess)
-        .expect("Failed to read line");
+            .read_line(&mut fib)
+            .expect("Failed to read line");
 
-        let guess: u32 = match guess.trim().parse() {
-            Ok(num) => num,
-            Err(_) => continue,
-        };
+        let fib: i32 = fib.trim().parse().expect("Input was not a number!");
 
-        match guess.cmp(&secret_number) {
-            Ordering::Less => println!("Too small!"),
-            Ordering::Greater => println!("Too big!"),
-            Ordering::Equal => {
-                println!("You Win Kiddo!!");
-                break;
-            }
+        let mut new_vector = Vec::new();
+        new_vector.extend(array);
+
+        for _n in 0..fib - 2 {
+            new_vector.push(0);
+        }
+
+        print_array(&new_vector);
+
+        let mut count: i32 = 1;
+
+        for element in new_vector {
+            let new_element = array[count as usize] + array[count as usize - 1];
+
+            let mut vector = new_vector;
+
+            println!("Element {}", element);
+            println!("New Element {}", new_element);
+            println!("Count {}", count);
+
+            vector[count as usize + 1] = new_element;
+
+            count = count + 1;
         }
     }
+}
 
-    
+fn print_array<T: std::fmt::Display>(v: &Vec<T>) {
+    for (count, element) in v.iter().enumerate() {
+        println!("Element {} is {}", count, element);
+    }
 }
