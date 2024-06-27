@@ -20,6 +20,9 @@ public class App {
             21, 92, 69, 81, 40, 40, 34, 68, 78, 24, 87, 42, 69, 23, 41, 78, 22, 6, 90, 99, 89, 50, 30, 20, 1, 43, 3, 70,
             95, 33, 46, 44, 9, 69, 48, 33, 60, 65, 16, 82, 67, 61, 32, 21, 79, 75, 75, 13, 87, 70, 33 };
 
+    // # Alphabetgrid len(grid)=5, height(grid)=5
+    static String[] alphabetGrid = {"ebacd", "fghij", "olmkn", "trpqs", "xywuv"};
+
     public static void main(String[] args) throws Exception {
         System.out.println("Testing Plus Minus");
         plusMinus(intArray);
@@ -51,6 +54,14 @@ public class App {
 
         System.out.println("Testing CaeserCypher");
         System.out.println(caeserCypher("middle-Outz", 2));
+        System.out.println();
+
+        System.out.println("Testing Grid Challenge");
+        System.out.println(gridChallenge(alphabetGrid));
+        System.out.println();
+
+        System.out.println("Testing SuperDigit");
+        System.out.println(superDigit("9875", 4));
         System.out.println();
     }
 
@@ -185,30 +196,30 @@ public class App {
             Character newChar = ' ';
 
             // # if the letter is 65 > x < 90 its lowercase
-            if (numVal > 65 && numVal < 90) {
+            if (numVal >= 65 && numVal <= 90) {
 
                 // # if the shift value makes the letter a symbol
                 // # subtract or add the alphabet length to shift to the start or end of the
                 // alphabet string
                 // # set the newChar = char(incrementVal(k) + asciiValue(numVal))
-                if ((numVal + rotation) > 90) {
-                    rotation -= 25;
+                if ((numVal + rotation) > 91) {
+                    rotation -= 26;
                     newChar = (char) (numVal + rotation);
                 } else if ((numVal + rotation) < 65) {
-                    rotation += 25;
+                    rotation += 26;
                     newChar = (char) (numVal + rotation);
                 } else {
                     newChar = (char) (numVal + rotation);
                 }
 
                 // # if the letter is 97 > x < 122 its uppercase
-            } else if (numVal > 97 && numVal < 122) {
+            } else if (numVal >= 97 && numVal <= 122) {
 
                 if ((numVal + rotation) > 122) {
-                    rotation -= 25;
+                    rotation -= 26;
                     newChar = (char) (numVal + rotation);
                 } else if ((numVal + rotation) < 97) {
-                    rotation += 25;
+                    rotation += 26;
                     newChar = (char) (numVal + rotation);
                 } else {
                     newChar = (char) (numVal + rotation);
@@ -221,5 +232,40 @@ public class App {
             coded.append(newChar);
         }
         return coded.toString();
+    }
+
+    public static String gridChallenge(String[] gridArray) {
+        for(int i =0; i < gridArray.length; i++) {
+            char[] charArr = gridArray[i].toCharArray();
+            Arrays.sort(charArr);
+            gridArray[i] = new String(charArr);
+        }
+        System.out.println(Arrays.toString(gridArray));
+        for(int i = 0; i < gridArray[0].length(); i++) {
+            for(int j = 1; j < gridArray[0].length()-1; j++) {
+                if (gridArray[j].charAt(i) > gridArray[j+1].charAt(i)) {
+                    return "NO";
+                }
+            }
+        }
+        return "Yes";
+    }
+
+    public static int superDigit(String original, int concats) {
+        int superDigit = 0;
+        int length = original.length();
+
+        if(length==1) {
+            return Integer.parseInt(original);
+        } else {
+            for(int i = 0; i < length; i++) {
+                char x = original.charAt(i);
+                superDigit += Character.getNumericValue(x);
+            }
+            superDigit *= concats;
+        }
+
+        String newOriginal = String.valueOf(superDigit);
+        return superDigit(newOriginal,1);
     }
 }

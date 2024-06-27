@@ -15,29 +15,29 @@ function caesarCipher(s, k) {
         var newChar = ""
 
         // # if the letter is 65 > x < 90 its lowercase
-        if (numVal > 65 && numVal < 90) {
+        if (numVal >= 65 && numVal <= 90) {
 
             // # if the shift value makes the letter a symbol
             // # subtract or add the alphabet length to shift to the start or end of the alphabet string
             // # set the newChar = char(incrementVal(k) + asciiValue(numVal))
             if ((numVal + k) > 90) {
-                k -= 25
+                k -= 26
                 newChar = String.fromCharCode(numVal + k);
             } else if ((numVal + k) < 65) {
-                k += 25
+                k += 26
                 newChar = String.fromCharCode(numVal + k)
             } else {
                 newChar = String.fromCharCode(numVal + k)
             }
 
             // # if the letter is 97 > x < 122 its uppercase
-        } else if (numVal > 97 && numVal < 122) {
+        } else if (numVal >= 97 && numVal <= 122) {
 
             if ((numVal + k) > 122) {
-                k -= 25
+                k -= 26
                 newChar = String.fromCharCode(numVal + k);
             } else if ((numVal + k) < 97) {
-                k += 25
+                k += 26
                 newChar = String.fromCharCode(numVal + k);
             } else {
                 newChar = String.fromCharCode(numVal + k)

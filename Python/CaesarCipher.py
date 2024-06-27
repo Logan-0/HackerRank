@@ -15,26 +15,26 @@ def caesarCipher(s, k):
         newChar = ""
 
         # if the letter is 65 > x < 90 its lowercase
-        if (numVal > 65 and numVal < 90):
+        if (numVal >= 65 and numVal <= 90):
             # if the shift value makes the letter a symbol
             # subtract or add the alphabet length to shift to the start or end of the alphabet string
             # set the newChar = char(incrementVal(k) + asciiValue(numVal))
             if (numVal + k) > 90:
-                k-=25
+                k-=26
                 newChar = chr(numVal+k);
             elif (numVal + k) < 65:
-                k+=25
+                k+=26
                 newChar = chr(numVal+k)
             else:
                 newChar = chr(numVal+k)
 
         # if the letter is 97 > x < 122 its uppercase
-        elif ( numVal > 97 and numVal < 122):
+        elif ( numVal >= 97 and numVal <= 122):
             if (numVal + k) > 122:
-                k-=25
+                k-=26
                 newChar = chr(numVal+k);
             elif (numVal + k) < 97:
-                k+=25
+                k+=26
                 newChar = chr(numVal+k);
             else:
                 newChar = chr(numVal+k)
