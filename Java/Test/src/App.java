@@ -1,51 +1,8 @@
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.List;
 
 public class App {
-
-    static class SinglyLinkedListNode {
-        public int data;
-        public SinglyLinkedListNode next;
-
-        public SinglyLinkedListNode(int nodeData) {
-            this.data = nodeData;
-            this.next = null;
-        }
-    }
-
-    static class SinglyLinkedList {
-        public SinglyLinkedListNode head;
-        public SinglyLinkedListNode tail;
-
-        public SinglyLinkedList() {
-            this.head = null;
-            this.tail = null;
-        }
-
-        public void insertNode(int nodeData) {
-            SinglyLinkedListNode node = new SinglyLinkedListNode(nodeData);
-
-            if (this.head == null) {
-                this.head = node;
-            } else {
-                this.tail.next = node;
-            }
-
-            this.tail = node;
-        }
-    }
-
-    public static void printSinglyLinkedList(SinglyLinkedListNode node) throws IOException {
-        System.out.println("Merged Lists:");
-        while (node != null) {
-            System.out.print(node.data + " ");
-            node = node.next;
-        }
-    }
 
     // Variables
     static int[] intArray = { 4, 7, -3, 5, 0, -1, 0, -13 };
@@ -65,29 +22,9 @@ public class App {
             21, 92, 69, 81, 40, 40, 34, 68, 78, 24, 87, 42, 69, 23, 41, 78, 22, 6, 90, 99, 89, 50, 30, 20, 1, 43, 3, 70,
             95, 33, 46, 44, 9, 69, 48, 33, 60, 65, 16, 82, 67, 61, 32, 21, 79, 75, 75, 13, 87, 70, 33 };
 
-    // # Alphabetgrid len(grid)=5, height(grid)=5
-    static String[] alphabetGrid = { "ebacd", "fghij", "olmkn", "trpqs", "xywuv" };
-
-    // Artificial QueueUsingTwoStacks
-    // Normally just involves a parse, but to keep Java simple and a single File
-    // will pre interpret commands to focus on queueing
-    static String[] stackCommands = { "1 42", "2", "1 14", "3", "1 28", "3", "1 60", "1 78", "2", "2" };
-
-    static String brackets = "{{[[(())]]}}";
+    static List<String> gridArrList = Arrays.asList("ebacd", "fghij", "olmkn", "trpqs", "xywuv");
 
     public static void main(String[] args) throws Exception {
-
-        // Singly Linked List 1 & 2
-        SinglyLinkedList singlyLinkedList1 = new SinglyLinkedList();
-        singlyLinkedList1.insertNode(1);
-        singlyLinkedList1.insertNode(3);
-        singlyLinkedList1.insertNode(6);
-
-        SinglyLinkedList singlyLinkedList2 = new SinglyLinkedList();
-        singlyLinkedList2.insertNode(2);
-        singlyLinkedList2.insertNode(4);
-        singlyLinkedList2.insertNode(5);
-
         System.out.println("Testing Plus Minus");
         plusMinus(intArray);
         System.out.println();
@@ -121,25 +58,11 @@ public class App {
         System.out.println();
 
         System.out.println("Testing Grid Challenge");
-        System.out.println(gridChallenge(alphabetGrid));
+        System.out.println(gridChallenge(gridArrList));
         System.out.println();
 
         System.out.println("Testing SuperDigit");
-        System.out.println(superDigit("9875", 4));
-        System.out.println();
-
-        System.out.println("Testing MergeLists");
-        printSinglyLinkedList(mergeLists(singlyLinkedList1.head, singlyLinkedList2.head));
-        System.out.println();
-        System.out.println();
-
-        System.out.println("Testing QueueUsingTwoStacks");
-        queueUsingTwoStacks(stackCommands);
-        System.out.println();
-
-        System.out.println("Testing Balanced Brackets");
-        System.out.println(balancedBrackets(brackets));
-        System.out.println();
+        System.out.println(superDigit("1234", 3));
     }
 
     //
@@ -273,30 +196,30 @@ public class App {
             Character newChar = ' ';
 
             // # if the letter is 65 > x < 90 its lowercase
-            if (numVal >= 65 && numVal <= 90) {
+            if (numVal > 65 && numVal < 90) {
 
                 // # if the shift value makes the letter a symbol
                 // # subtract or add the alphabet length to shift to the start or end of the
                 // alphabet string
                 // # set the newChar = char(incrementVal(k) + asciiValue(numVal))
-                if ((numVal + rotation) > 91) {
-                    rotation -= 26;
+                if ((numVal + rotation) > 90) {
+                    rotation -= 25;
                     newChar = (char) (numVal + rotation);
                 } else if ((numVal + rotation) < 65) {
-                    rotation += 26;
+                    rotation += 25;
                     newChar = (char) (numVal + rotation);
                 } else {
                     newChar = (char) (numVal + rotation);
                 }
 
                 // # if the letter is 97 > x < 122 its uppercase
-            } else if (numVal >= 97 && numVal <= 122) {
+            } else if (numVal > 97 && numVal < 122) {
 
                 if ((numVal + rotation) > 122) {
-                    rotation -= 26;
+                    rotation -= 25;
                     newChar = (char) (numVal + rotation);
                 } else if ((numVal + rotation) < 97) {
-                    rotation += 26;
+                    rotation += 25;
                     newChar = (char) (numVal + rotation);
                 } else {
                     newChar = (char) (numVal + rotation);
@@ -311,138 +234,37 @@ public class App {
         return coded.toString();
     }
 
-    public static String gridChallenge(String[] gridArray) {
-        for (int i = 0; i < gridArray.length; i++) {
-            char[] charArr = gridArray[i].toCharArray();
-            Arrays.sort(charArr);
-            gridArray[i] = new String(charArr);
+    public static String gridChallenge(List<String> grid) {
+
+        // Sort the Array
+        for (int i = 0; i < grid.get(i).length() - 1; i++) {
+            char[] tempArr = grid.get(i).toCharArray();
+            Arrays.sort(tempArr);
+            grid.set(i, new String(tempArr));
         }
-        System.out.println(Arrays.toString(gridArray));
-        for (int i = 0; i < gridArray[0].length(); i++) {
-            for (int j = 1; j < gridArray[0].length() - 1; j++) {
-                if (gridArray[j].charAt(i) > gridArray[j + 1].charAt(i)) {
+        for (int i = 0; i < grid.get(i).length() - 1; i++) {
+            for (int j = 0; j < grid.get(j).length() - 1; j++) {
+                if (grid.get(i).charAt(j) > grid.get(i).charAt(j + 1)) {
                     return "NO";
                 }
             }
         }
-        return "Yes";
-    }
 
-    public static int superDigit(String original, int concats) {
-        int superDigit = 0;
-        int length = original.length();
-
-        if (length == 1) {
-            return Integer.parseInt(original);
-        } else {
-            for (int i = 0; i < length; i++) {
-                char x = original.charAt(i);
-                superDigit += Character.getNumericValue(x);
-            }
-            superDigit *= concats;
-        }
-
-        String newOriginal = String.valueOf(superDigit);
-        return superDigit(newOriginal, 1);
-    }
-
-    public static SinglyLinkedListNode mergeLists(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
-        if (head1 == null && head2 == null) {
-            return null;
-        }
-
-        if (head1 == null) {
-            return head2;
-        } else if (head2 == null) {
-            return head1;
-        }
-
-        SinglyLinkedListNode mHead = null;
-        SinglyLinkedListNode mTail = null;
-
-        if (head1.data < head2.data) {
-            mHead = head1;
-            mTail = head1;
-            head1 = head1.next;
-        } else {
-            mHead = head2;
-            mTail = head2;
-            head2 = head2.next;
-        }
-
-        while (head1 != null && head2 != null) {
-            if (head1.data < head2.data) {
-                mTail.next = head1;
-                mTail = mTail.next;
-                head1 = head1.next;
-            } else {
-                mTail.next = head2;
-                mTail = mTail.next;
-                head2 = head2.next;
-            }
-        }
-
-        while (head1 == null && head2 != null) {
-            mTail.next = head2;
-            mTail = mTail.next;
-            head2 = head2.next;
-        }
-        while (head2 == null && head1 != null) {
-            mTail.next = head1;
-            mTail = mTail.next;
-            head1 = head1.next;
-        }
-
-        return mHead;
-    }
-
-    public static void queueUsingTwoStacks(String[] array) {
-        Queue<String> cmdLines = new LinkedList<String>();
-        for (String line : array) {
-            cmdLines.add(line);
-        }
-
-        Stack<String> endStack = new Stack<String>();
-        for (int i = 0; i < cmdLines.size(); i++) {
-            String[] splited = cmdLines.poll().trim().split(" ");
-            switch (splited[0]) {
-                case "1":
-                    endStack.push(splited[1]);
-                    break;
-                case "2":
-                    endStack.pop();
-                    break;
-                case "3":
-                    System.out.println(endStack.peek());
-                    break;
-            }
-        }
-    }
-
-    public static String balancedBrackets(String checkLine) {
-        ArrayList<Character> bracks = new ArrayList<>();
-        char test = ' ';
-        for (int i =0; i < checkLine.length(); i++) {
-            if (checkLine.charAt(i) == '(' || checkLine.charAt(i) == '[' || checkLine.charAt(i) == '{') {
-                bracks.add(checkLine.charAt(i));
-            } else if (checkLine.charAt(i) == ']') {
-                test = bracks.removeLast();
-                if (test != '[') {
-                    return "NO";
-                } 
-            } else if (checkLine.charAt(i) == ')') {
-                test = bracks.removeLast();
-                if (test != '(') {
-                    return "NO";
-                } 
-            } else if (checkLine.charAt(i) == '}') {
-                test = bracks.removeLast();
-                if (test != '{') {
-                    return "NO";
-                } 
-            }
-        };
-    
         return "YES";
+    }
+
+    public static int superDigit(String n, int k) {
+        if (n.length() == 1) {
+            return Integer.parseInt(n);
+        }
+
+        int count = 0;
+        for (int i = 0; i < n.length(); i++) {
+            int charVal = Character.getNumericValue(n.charAt(i));
+            count += charVal;
+        }
+        count *= k;
+
+        return superDigit(String.valueOf(count), 1);
     }
 }
